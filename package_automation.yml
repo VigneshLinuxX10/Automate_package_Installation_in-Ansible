@@ -1,0 +1,12 @@
+- name: Installing required packages
+  hosts: web_server
+  become: yes
+  tasks:
+    - name: Installing the  packages
+      yum:
+        name:
+          - httpd
+          - mysqld
+          - rsync
+          - git
+        state: present
